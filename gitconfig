@@ -1,0 +1,9 @@
+[user]
+	email = hector.peeters@gmail.com
+	name = Hector Peeters
+[core]
+	editor = nvim
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
