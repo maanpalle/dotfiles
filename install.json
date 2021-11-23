@@ -3,10 +3,8 @@
     "clean": ["~"]
   },
   {
-    "shell": [["mkdir -p ~/bin/", "Creating bin dir"]]
-  },
-  {
     "link": {
+      "~/bin": "bin",
       "~/.config/alacritty": "alacritty",
       "~/.config/nvim": "nvim",
       "~/.gitconfig": "gitconfig",
