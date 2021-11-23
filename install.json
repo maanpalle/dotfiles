@@ -1,0 +1,13 @@
+[
+  {
+    "clean": ["~"]
+  },
+  {
+    "shell": []
+  },
+  {
+    "link": {
+      "~/.config/alacritty": "alacritty"
+    }
+  }
+]
