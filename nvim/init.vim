@@ -71,5 +71,7 @@ let NERDTreeShowHidden=1
 
 " FZF
 
-noremap <C-p> :Files<CR>
+noremap <C-p> :GFiles<CR>
+noremap <C-[> :Files<CR>
+noremap <leader>d :Rg<CR>
 inoremap <Esc> <Esc><Esc>
