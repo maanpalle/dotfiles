@@ -1,0 +1,27 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "rust",
+    "json",
+    "typescript",
+    "toml",
+    "cpp"
+  ],
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp"],
+      "rootPatterns": [".ccls", "compile_commands.json"],
+      "initializationOptions": {
+        "cache": {
+          "directory": "~/.cache/ccls"
+        }
+      }
+    },
+    "zls": {
+      "command": "zls",
+      "filetypes": ["zig"],
+      "rootPatterns": ["source.zig", "Source.zig"],
+      "initializationOptions": {}
+    }
+  }
+}

@@ -8,6 +8,7 @@
   {
     "link": {
       "~/.config/alacritty": "alacritty",
+      "~/.config/nvim": "nvim",
       "~/.gitconfig": "gitconfig",
       "~/.zshrc": "zshrc"
     }
