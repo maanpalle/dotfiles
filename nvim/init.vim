@@ -7,7 +7,6 @@ call plug#begin('~/.nvim/plugged')
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
-    Plug 'octol/vim-cpp-enhanced-highlighting'
 call plug#end()
 
 set nobackup
