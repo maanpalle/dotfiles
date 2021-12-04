@@ -7,8 +7,8 @@ env:
 
 window:
   dimensions:
-    columns: 82
-    lines: 52
+  #   columns: 82
+  #   lines: 52
 
     padding:
       x: 12
