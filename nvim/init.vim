@@ -7,6 +7,7 @@ call plug#begin('~/.nvim/plugged')
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
+    Plug 'lervag/vimtex'
 call plug#end()
 
 set nobackup
@@ -19,6 +20,7 @@ set number
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set wrap lbr
 
 syntax enable
 filetype plugin indent on

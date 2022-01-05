@@ -5,7 +5,8 @@
     "typescript",
     "toml",
     "cpp",
-    "c"
+    "c",
+    "java"
   ],
   "languageserver": {
     "ccls": {

@@ -111,3 +111,4 @@ bar {
 }
 
 exec --no-startup-id synergy
+exec --no-startup-id startup_hook
