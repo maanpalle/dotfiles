@@ -111,4 +111,4 @@ bar {
 }
 
 exec --no-startup-id synergy
-exec --no-startup-id startup_hook
+exec --no-startup-id /home/$USER/bin/custom/startup_hook

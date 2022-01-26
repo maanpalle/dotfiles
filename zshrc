@@ -11,6 +11,8 @@ source ~/.cargo/env
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 source /usr/share/nvm/init-nvm.sh
 
-export PATH=$PATH:/home/$USER/bin
+export PATH=$PATH:/home/$USER/bin:/home/$USER/bin/custom
 
 fortune | cowsay
+
+alias cat=bat
