@@ -13,6 +13,4 @@ source /usr/share/nvm/init-nvm.sh
 
 export PATH=$PATH:/home/$USER/bin:/home/$USER/bin/custom
 
-fortune | cowsay
-
 alias cat=bat
