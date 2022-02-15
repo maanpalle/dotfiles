@@ -6,7 +6,8 @@
     "toml",
     "cpp",
     "c",
-    "java"
+    "java",
+    "cs"
   ],
   "languageserver": {
     "ccls": {

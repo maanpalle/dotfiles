@@ -8,6 +8,7 @@ call plug#begin('~/.nvim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
     Plug 'lervag/vimtex'
+    Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 set nobackup
@@ -57,7 +58,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-reference)
+nmap <silent> gr <Plug>(coc-references)
 nmap <F2> <Plug>(coc-rename)
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
