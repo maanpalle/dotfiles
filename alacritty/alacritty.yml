@@ -1,5 +1,6 @@
 import:
   - ~/.config/alacritty/fonts.yml
+  - ~/.config/alacritty/colors.yml
 
 env:
   # TERM: alacritty
@@ -7,9 +8,6 @@ env:
 
 window:
   dimensions:
-  #   columns: 82
-  #   lines: 52
-
     padding:
       x: 12
       y: 12

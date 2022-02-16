@@ -16,7 +16,7 @@
       "rootPatterns": [".ccls", "compile_commands.json"],
       "initializationOptions": {
         "cache": {
-          "directory": "~/.cache/ccls"
+          "directory": "/home/hector/cache/ccls"
         }
       }
     },
