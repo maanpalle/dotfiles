@@ -9,6 +9,9 @@
     "java",
     "cs"
   ],
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -23,7 +26,7 @@
     "zls": {
       "command": "zls",
       "filetypes": ["zig"],
-      "rootPatterns": ["source.zig", "Source.zig"],
+      "rootPatterns": ["source.zig", "Source.zig", "build.zig"],
       "initializationOptions": {}
     }
   }

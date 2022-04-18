@@ -22,9 +22,11 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set wrap lbr
+syntax on
+colorscheme onedark
 
-syntax enable
 filetype plugin indent on
+set makeprg=buldr
 
 " COC
 
@@ -60,6 +62,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <F2> <Plug>(coc-rename)
+xmap <leader>a v<Plug>(coc-codeaction-selected)
+nmap <leader>a v<Plug>(coc-codeaction-selected)
+
+nmap <C-m> :make<CR>
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
