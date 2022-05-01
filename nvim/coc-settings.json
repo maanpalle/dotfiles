@@ -3,11 +3,13 @@
     "rust",
     "json",
     "typescript",
+    "typescriptreact",
     "toml",
     "cpp",
     "c",
     "java",
-    "cs"
+    "cs",
+    "javascript"
   ],
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualText": true,

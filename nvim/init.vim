@@ -9,6 +9,9 @@ call plug#begin('~/.nvim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'lervag/vimtex'
     Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'wfxr/minimap.vim'
+    Plug 'joshdick/onedark.vim'
+    Plug 'NoahTheDuke/vim-just'
 call plug#end()
 
 set nobackup
@@ -83,3 +86,5 @@ let NERDTreeShowHidden=1
 noremap <C-p> :Files<CR>
 noremap <leader>d :Rg<CR>
 inoremap <Esc> <Esc><Esc>
+
+au BufRead,BufNewFile *.dodo set filetype=dodo
