@@ -1,20 +1,20 @@
 # Nice font choices: Tamzen, Hack, Gohu GohuFont
 
-font:
-  normal:
-    family: "Tamzen"
-    style: Regular
-
-  bold:
-    family: "Tamzen"
-    style: Bold
-
-  italic:
-    family: "Tamzen"
-    style: Italic
-
-  bold_italic:
-    family: "Tamzen"
-    style: Bold Italic
-
-  size: 14
+ font:
+   normal:
+     family: "xos4 Terminus"
+     style: Regular
+ 
+   bold:
+     family: "xos4 Terminus"
+     style: Bold
+ 
+   italic:
+     family: "xos4 Terminus"
+     style: Italic
+ 
+   bold_italic:
+     family: "xos4 Terminus"
+     style: Bold Italic
+ 
+   size: 12
