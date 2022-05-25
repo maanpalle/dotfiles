@@ -12,6 +12,13 @@ call plug#begin('~/.nvim/plugged')
     Plug 'wfxr/minimap.vim'
     Plug 'joshdick/onedark.vim'
     Plug 'NoahTheDuke/vim-just'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'ziglang/zig.vim'
+    Plug 'phanviet/vim-monokai-pro'
+    Plug 'jlcrochet/vim-cs'
+    Plug 'neovimhaskell/haskell-vim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'isti115/agda.nvim'
 call plug#end()
 
 set nobackup
@@ -26,10 +33,25 @@ set tabstop=4
 set shiftwidth=4
 set wrap lbr
 syntax on
-colorscheme onedark
+
+set termguicolors
+colorscheme monokai_pro
 
 filetype plugin indent on
 set makeprg=buldr
+
+autocmd BufNewFile,BufRead *.dodo setfiletype dodo 
+
+" Haskell highlighting
+
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+let g:haskell_classic_highlighting = 1
 
 " COC
 
@@ -41,8 +63,7 @@ let g:coc_global_extensions=[
     \ 'coc-ccls',
     \ 'coc-yaml',
     \ 'coc-tsserver',
-    \ 'coc-html',
-    \ 'coc-zig']
+    \ 'coc-html']
 
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
@@ -56,6 +77,8 @@ function! s:check_back_space() abort
 endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
     \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -79,11 +102,16 @@ noremap <C-n> :NERDTreeToggle<CR>
 " AIRLINE
 
 let g:airline_theme='deus'
+
 let NERDTreeShowHidden=1
 
 " FZF
 
 noremap <C-p> :Files<CR>
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   "rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1,
+  \   {'options': '--delimiter : --nth 4..'}, <bang>0)
 noremap <leader>d :Rg<CR>
 inoremap <Esc> <Esc><Esc>
 
