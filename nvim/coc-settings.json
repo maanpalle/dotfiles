@@ -9,7 +9,10 @@
     "c",
     "java",
     "cs",
-    "javascript"
+    "python",
+    "javascript",
+    "zig",
+    "haskell"
   ],
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualText": true,
@@ -21,15 +24,32 @@
       "rootPatterns": [".ccls", "compile_commands.json"],
       "initializationOptions": {
         "cache": {
-          "directory": "/home/hector/cache/ccls"
+          "directory": "/home/hector/.cache/ccls"
         }
       }
     },
     "zls": {
-      "command": "zls",
+      "command": "/sbin/zls",
       "filetypes": ["zig"],
       "rootPatterns": ["source.zig", "Source.zig", "build.zig"],
       "initializationOptions": {}
+    },
+    "csharp": {
+      "command": "csharp-ls",
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.sln"]
+    },
+    "haskell": {
+      "command": "haskell-language-server",
+      "args": ["--lsp"],
+      "rootPatterns": [
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml"
+      ],
+      "filetypes": ["hs", "lhs", "haskell"]
     }
   }
 }
