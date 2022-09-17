@@ -19,6 +19,9 @@ call plug#begin('~/.nvim/plugged')
     Plug 'neovimhaskell/haskell-vim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'isti115/agda.nvim'
+    Plug 'puremourning/vimspector'
+    Plug 'SerenityOS/jakt', { 'rtp': 'editors/vim' }
+    Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 set nobackup
@@ -37,10 +40,13 @@ syntax on
 set termguicolors
 colorscheme monokai_pro
 
+let g:vimspector_enable_mappings = 'HUMAN'
+
 filetype plugin indent on
 set makeprg=buldr
 
 autocmd BufNewFile,BufRead *.dodo setfiletype dodo 
+autocmd BufNewFile,BufRead *.ntr setfiletype lisp 
 
 " Haskell highlighting
 
@@ -57,7 +63,6 @@ let g:haskell_classic_highlighting = 1
 
 let g:coc_global_extensions=[
     \ 'coc-prettier',
-    \ 'coc-rust-analyzer',
     \ 'coc-json',
     \ 'coc-toml',
     \ 'coc-ccls',
@@ -65,23 +70,25 @@ let g:coc_global_extensions=[
     \ 'coc-tsserver',
     \ 'coc-html']
 
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? '\<C-p>' : '\<C-h>'
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1] =~# '\s'
+function! CheckBackSpace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
-    \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <silent><expr> <TAB>
+  \ coc#pum#visible() ? coc#pum#next(1):
+  \ CheckBackSpace() ? "\<Tab>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)

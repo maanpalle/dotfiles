@@ -12,11 +12,13 @@
     "python",
     "javascript",
     "zig",
-    "haskell"
+    "haskell",
+    "yaml"
   ],
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
+  "zig.path": "/bin/zls",
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -50,6 +52,11 @@
         "package.yaml"
       ],
       "filetypes": ["hs", "lhs", "haskell"]
+    },
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml"]
     }
   }
 }
